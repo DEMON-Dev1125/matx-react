@@ -5,6 +5,11 @@ export const navigations = [
     icon: "dashboard"
   },
   {
+    name: "Freelancer",
+    path: "/freelancer/setup",
+    icon: "list"
+  },
+  {
     name: "Forms",
     icon: "description",
     children: [
