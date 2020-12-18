@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import clsx from 'clsx';
+import clsx from "clsx";
+import {
+  makeStyles,
+} from "@material-ui/core/styles";
 
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Card,
   CardActions,
@@ -9,8 +11,8 @@ import {
   Button,
   Typography,
   FormHelperText,
-  FilledInput,
-  FormControl
+  OutlinedInput,
+  FormControl,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -18,26 +20,50 @@ const useStyles = makeStyles((theme) => ({
     width: 497,
     margin: "5px 0 0 10px",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
   title: {
+    margin: theme.spacing(1),
     fontSize: 18,
     fontWeight: "bold",
+  },
+  pos: {
+    margin: theme.spacing(1),
+    fontSize: 16,
+    marginBottom: 12,
   },
   margin: {
     margin: theme.spacing(1),
   },
-  textField: {
-    width: '25ch',
+  textDateField: {
+    width: 253,
+  },
+  textTimeField: {
+    width: 163,
+  },
+  textReasonField: {
+    width: 435,
+  },
+  helpText: {
+    marginLeft: theme.spacing(0),
+    fontSize: 16,
+  },
+  button: {
+    margin: theme.spacing(1),
+    backgroundColor: "#1C1C1C",
+    border: "none",
+    color: "white",
+    width: 100,
+    height: 46,
+    textAlign: "center",
+    display: "inline-block",
+    fontSize: "16px",
+    cursor: "pointer",
+    borderRadius: "3.85",
+    fontWeight: "bold",
   },
 }));
 
 function Setup() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -48,23 +74,126 @@ function Setup() {
         <Typography className={classes.pos} color="textSecondary">
           This suspend have days and time limitation.
         </Typography>
-
-        <FormControl className={clsx(classes.margin, classes.textField)} variant="filled">
-          <FilledInput
-            id="filled-adornment-weight"
-            // value={values.weight}
-            // onChange={handleChange('weight')}
-            // endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-            aria-describedby="filled-weight-helper-text"
+        <FormControl
+          className={clsx(classes.margin, classes.dateField)}
+          variant="outlined"
+        >
+          <FormHelperText
+            className={classes.helpText}
+            id="outlined-weight-helper-text"
+          >
+            From Date
+          </FormHelperText>
+          <OutlinedInput
+            className={classes.textDateField}
+            type="date"
+            id="outlined-adornment-weight"
+            aria-describedby="outlined-weight-helper-text"
             inputProps={{
-              'aria-label': 'weight',
+              "aria-label": "weight",
             }}
+            labelWidth={0}
           />
-          <FormHelperText id="filled-weight-helper-text">Weight</FormHelperText>
         </FormControl>
+        <FormControl
+          className={clsx(classes.margin, classes.timeField)}
+          variant="outlined"
+        >
+          <FormHelperText
+            className={classes.helpText}
+            id="outlined-weight-helper-text"
+          >
+            Time
+          </FormHelperText>
+          <OutlinedInput
+            className={classes.textTimeField}
+            type="time"
+            id="outlined-adornment-weight"
+            aria-describedby="outlined-weight-helper-text"
+            inputProps={{
+              "aria-label": "weight",
+            }}
+            labelWidth={0}
+          />
+        </FormControl>
+
+        <FormControl
+          className={clsx(classes.margin, classes.dateField)}
+          variant="outlined"
+        >
+          <FormHelperText
+            className={classes.helpText}
+            id="outlined-weight-helper-text"
+          >
+            End Date
+          </FormHelperText>
+          <OutlinedInput
+            className={classes.textDateField}
+            type="date"
+            id="outlined-adornment-weight"
+            aria-describedby="outlined-weight-helper-text"
+            inputProps={{
+              "aria-label": "weight",
+            }}
+            labelWidth={0}
+          />
+        </FormControl>
+        <FormControl
+          className={clsx(classes.margin, classes.timeField)}
+          variant="outlined"
+        >
+          <FormHelperText
+            className={classes.helpText}
+            id="outlined-weight-helper-text"
+          >
+            Time
+          </FormHelperText>
+          <OutlinedInput
+            className={classes.textTimeField}
+            type="time"
+            id="outlined-adornment-weight"
+            aria-describedby="outlined-weight-helper-text"
+            inputProps={{
+              "aria-label": "weight",
+            }}
+            labelWidth={0}
+          />
+        </FormControl>
+
+        <FormControl
+          className={clsx(classes.margin, classes.reasonField)}
+          variant="outlined"
+        >
+          <FormHelperText
+            className={classes.helpText}
+            id="outlined-weight-helper-text"
+          >
+            Reason
+          </FormHelperText>
+          <OutlinedInput
+            className={classes.textReasonField}
+            multiline
+            rows={4}
+            id="outlined-adornment-weight"
+            aria-describedby="outlined-weight-helper-text"
+            inputProps={{
+              "aria-label": "weight",
+            }}
+            labelWidth={0}
+          />
+        </FormControl>
+        <button className={classes.button}>
+          Save
+        </button>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Typography className={classes.title} color="black" gutterBottom>
+          Current suspend
+        </Typography>
+        <hr />
+        <Typography className={classes.pos} color="textSecondary">
+          This suspend have days and time limitation.
+        </Typography>
       </CardActions>
     </Card>
   );
