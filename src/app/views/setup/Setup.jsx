@@ -187,7 +187,7 @@ function Setup() {
         </button>
       </CardContent>
       <CardActions>
-        <Typography className={classes.title} color="black" gutterBottom>
+        <Typography className={classes.title} color="black">
           Current suspend
         </Typography>
         <hr />
