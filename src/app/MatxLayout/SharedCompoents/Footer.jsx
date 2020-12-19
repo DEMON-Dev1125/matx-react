@@ -11,16 +11,19 @@ const Footer = ({ theme, settings }) => {
       <Helmet>
         <style>
           {`
-              .footer {
-                background: ${footerTheme.palette.primary.main};
-                color: ${footerTheme.palette.primary.contrastText};
-              }
-            `}
+            .footer {
+              background: ${footerTheme.palette.primary.main};
+              color: ${footerTheme.palette.primary.contrastText};
+            }
+          `}
         </style>
       </Helmet>
       <div className="footer flex flex-middle">
         <div className="flex flex-middle container px-sm-30 w-100">
-          <a href="https://ui-lib.com/downloads/matx-react-material-design-admin-template/" className="mr-8">
+          <a
+            href="https://ui-lib.com/downloads/matx-react-material-design-admin-template/"
+            className="mr-8"
+          >
             <Button variant="contained" color="error">
               Download Matx
             </Button>
@@ -41,16 +44,14 @@ const Footer = ({ theme, settings }) => {
 };
 
 Footer.propTypes = {
-  settings: PropTypes.object.isRequired
+  settings: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-  settings: state.layout.settings
+const mapStateToProps = (state) => ({
+  settings: state.layout.settings,
 });
 
-export default withStyles({}, { withTheme: true })(
-  connect(
-    mapStateToProps,
-    {}
-  )(Footer)
-);
+export default withStyles(
+  {},
+  { withTheme: true }
+)(connect(mapStateToProps, {})(Footer));

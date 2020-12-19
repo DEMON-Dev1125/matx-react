@@ -6,8 +6,24 @@ export const navigations = [
   },
   {
     name: "Freelancer",
-    path: "/freelancer/setup",
-    icon: "list"
+    icon: "list",
+    children: [
+      {
+        name: "tab",
+        path: "/freelancer/setup",
+        icon: "list"
+      },
+      {
+        name: "setup",
+        path: "/freelancer/setupCom",
+        icon: "list"
+      },
+      {
+        name: "tab",
+        path: "/freelancer/tab",
+        icon: "list"
+      },
+    ]
   },
   {
     name: "Forms",
