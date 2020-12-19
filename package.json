@@ -25,6 +25,7 @@
     "install": "^0.13.0",
     "lodash": "^4.17.15",
     "material-ui": "^1.0.0-beta.47",
+    "material-ui-phone-number": "^2.2.6",
     "moment": "^2.24.0",
     "node-pre-gyp": "^0.17.0",
     "node-sass": "^4.12.0",

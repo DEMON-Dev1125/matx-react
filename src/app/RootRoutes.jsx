@@ -11,7 +11,7 @@ import dragAndDropRoute from "./views/Drag&Drop/DragAndDropRoute";
 import formsRoutes from "./views/forms/FormsRoutes";
 import mapRoutes from "./views/map/MapRoutes";
 
-import setupRouts from './views/setup/SetupRoutes';
+import FreelancerRoutes from './views/freelancer/FreelancerRoutes';
 
 const redirectRoute = [
   {
@@ -36,7 +36,7 @@ const routes = [
   ...formsRoutes,
   ...mapRoutes,
   ...redirectRoute,
-  ...setupRouts,
+  ...FreelancerRoutes,
   ...errorRoute
 ];
 

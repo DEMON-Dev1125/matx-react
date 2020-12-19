@@ -24,7 +24,7 @@ const Footer = ({ theme, settings }) => {
             href="https://ui-lib.com/downloads/matx-react-material-design-admin-template/"
             className="mr-8"
           >
-            <Button variant="contained" color="error">
+            <Button variant="contained" color="default">
               Download Matx
             </Button>
           </a>

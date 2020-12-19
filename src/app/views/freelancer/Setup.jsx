@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -13,7 +13,7 @@ import {
 
 const withStyles = makeStyles((theme) => ({
   root: {
-    width: 497,
+    width: theme.spacing(62),
     margin: "5px 0 0 10px",
   },
   title: {
@@ -30,13 +30,13 @@ const withStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   textDateField: {
-    width: 253,
+    width: theme.spacing(32),
   },
   textTimeField: {
-    width: 163,
+    width: theme.spacing(20),
   },
   textReasonField: {
-    width: 435,
+    width: theme.spacing(54),
   },
   helpText: {
     marginLeft: theme.spacing(0),
@@ -58,17 +58,31 @@ const withStyles = makeStyles((theme) => ({
   },
 
   currentStatus: {
-    marginTop: 34.8,
+    marginTop: theme.spacing(4),
   },
 }));
 
-function setupCom() {
+function Setup() {
   const classes = withStyles();
+
+  const [values, setValues] = React.useState({
+    amount: "",
+    password: "",
+    weight: "",
+    weightRange: "",
+    showPassword: false,
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleSave = () => {};
 
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
-        <Typography className={classes.title} color="black" gutterBottom>
+        <Typography className={classes.title} color="initial" gutterBottom>
           Temporary suspend
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
@@ -83,15 +97,14 @@ function setupCom() {
           </FormHelperText>
           <OutlinedInput
             className={classes.textDateField}
+            value={values.fromDate}
+            onChange={handleChange("fromoDate")}
             type="date"
             id="fromDateField"
-            // value={values.date}
-            // onChange={handleChange('date')}
             aria-describedby="outlined-date-helper-text"
             inputProps={{
               "aria-label": "date",
             }}
-            labelWidth={0}
           />
         </FormControl>
         <FormControl
@@ -112,7 +125,6 @@ function setupCom() {
             inputProps={{
               "aria-label": "time",
             }}
-            labelWidth={0}
           />
         </FormControl>
 
@@ -134,7 +146,6 @@ function setupCom() {
             inputProps={{
               "aria-label": "date",
             }}
-            labelWidth={0}
           />
         </FormControl>
         <FormControl
@@ -155,7 +166,6 @@ function setupCom() {
             inputProps={{
               "aria-label": "time",
             }}
-            labelWidth={0}
           />
         </FormControl>
 
@@ -178,18 +188,17 @@ function setupCom() {
             inputProps={{
               "aria-label": "reason",
             }}
-            labelWidth={0}
           />
         </FormControl>
         <button className={classes.button}>Save</button>
         <Typography
           className={clsx(classes.title, classes.currentStatus)}
-          color="black"
+          color="initial"
         >
-          Current suspend
+          Current Suspend
         </Typography>
         <hr />
-        <Typography className={classes.pos} color="black">
+        <Typography className={classes.pos} color="initial">
           This suspend have days and time limitation.
         </Typography>
       </CardContent>
@@ -197,4 +206,4 @@ function setupCom() {
   );
 }
 
-export default setupCom;
+export default Setup;
