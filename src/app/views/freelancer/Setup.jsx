@@ -9,25 +9,29 @@ import {
   FormHelperText,
   OutlinedInput,
   FormControl,
+  Divider
 } from "@material-ui/core";
 
 const withStyles = makeStyles((theme) => ({
   root: {
     width: theme.spacing(62),
-    margin: "5px 0 0 10px",
+    // padding: "10px 0 0 15px",
+  },
+  content: {
+    padding: 0
   },
   title: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
     fontSize: 18,
     fontWeight: "bold",
   },
   pos: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
     fontSize: 16,
     marginBottom: 12,
   },
   margin: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
   },
   textDateField: {
     width: theme.spacing(32),
@@ -36,14 +40,14 @@ const withStyles = makeStyles((theme) => ({
     width: theme.spacing(20),
   },
   textReasonField: {
-    width: theme.spacing(54),
+    width: theme.spacing(56),
   },
   helpText: {
     marginLeft: theme.spacing(0),
     fontSize: 16,
   },
   button: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
     backgroundColor: "#1C1C1C",
     border: "none",
     color: "white",
@@ -81,7 +85,7 @@ function Setup() {
 
   return (
     <Card className={classes.root} variant="outlined">
-      <CardContent>
+      <CardContent className={classes.content}>
         <Typography className={classes.title} color="initial" gutterBottom>
           Temporary suspend
         </Typography>
@@ -197,7 +201,7 @@ function Setup() {
         >
           Current Suspend
         </Typography>
-        <hr />
+        <Divider />
         <Typography className={classes.pos} color="initial">
           This suspend have days and time limitation.
         </Typography>

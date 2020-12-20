@@ -1,16 +1,18 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { Paper, Grid, Typography, Avatar } from "@material-ui/core";
+import { Paper, Grid, Typography, Avatar, Divider } from "@material-ui/core";
+
+import { MoreVert, Create } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(1),
-    color: theme.palette.text.secondary,
-    height: 671,
+    // padding: theme.spacing(1),
+    // color: theme.palette.text.secondary,
+    height: "auto",
   },
 
   //avatar style
@@ -24,12 +26,44 @@ const useStyles = makeStyles((theme) => ({
   userName: {
     fontSize: 14,
     fontWeight: "bold",
-    marginTop: 28,
+    marginTop: theme.spacing(3.5),
   },
   majorName: {
-    marginTop: 11,
+    marginTop: theme.spacing(1.5),
+    marginBottom: theme.spacing(4),
     fontSize: 14,
   },
+
+  itemTitle: {
+    fontSize: 14,
+    fontWeight: "bold",
+    paddingLeft: theme.spacing(3),
+  },
+  inforField: {
+    fontSize: 14,
+    textAlign: "center",
+  },
+  verifiField: {
+    fontSize: 12,
+    textAlign: "center",
+  },
+
+  title: {
+    margin: theme.spacing(3),
+    fontSize: 14,
+    fontWeight: "bold",
+  },
+
+  header: {
+    marginLeft: theme.spacing(3),
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  content: {
+    marginLeft: theme.spacing(3),
+    fontSize: 14,
+    fontWeight: "bold",
+  }
 }));
 
 function Personal() {
@@ -48,7 +82,7 @@ function Personal() {
             <Typography
               color="initial"
               align="center"
-              component={"p"}
+              component="p"
               className={classes.userName}
             >
               Apurba Das
@@ -56,18 +90,191 @@ function Personal() {
             <Typography
               color="textSecondary"
               align="center"
-              component={"p"}
+              component="p"
               className={classes.majorName}
             >
               IT Professional
             </Typography>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Email
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                apruba@gmail.com
+              </Grid>
+              <Grid item xs={3} className={classes.verifiField}>
+                Verified
+              </Grid>
+              <Grid item xs={1}>
+                <MoreVert />
+              </Grid>
+            </Grid>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                KYC
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                Identity Verification
+              </Grid>
+              <Grid item xs={3} className={classes.verifiField}>
+                Not Verified
+              </Grid>
+              <Grid item xs={1}>
+                <MoreVert />
+              </Grid>
+            </Grid>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Mobile
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                Mobile Verification
+              </Grid>
+              <Grid item xs={3} className={classes.verifiField}>
+                Not Verified
+              </Grid>
+              <Grid item xs={1}>
+                <MoreVert />
+              </Grid>
+            </Grid>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Payment
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                Payment Verification
+              </Grid>
+              <Grid item xs={3} className={classes.verifiField}>
+                Not Verified
+              </Grid>
+              <Grid item xs={1}>
+                <MoreVert />
+              </Grid>
+            </Grid>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Country
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                United State
+              </Grid>
+              <Grid item xs={3}></Grid>
+              <Grid item xs={1}>
+                <Create />
+              </Grid>
+            </Grid>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Category
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                Website and IT
+              </Grid>
+              <Grid item xs={3}></Grid>
+              <Grid item xs={1}>
+                <Create />
+              </Grid>
+            </Grid>
           </Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper} variant="outlined"></Paper>
+          <Paper className={classes.paper} variant="outlined">
+            <Typography color="initial" className={classes.title}>
+              Billing
+            </Typography>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Credit Card
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                VISA **** 5654
+              </Grid>
+              <Grid item xs={3} className={classes.verifiField}>
+                Verified
+              </Grid>
+              <Grid item xs={1}>
+                <MoreVert />
+              </Grid>
+            </Grid>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Credit Card
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                VISA **** 5654
+              </Grid>
+              <Grid item xs={3} className={classes.verifiField}>
+                In Active
+              </Grid>
+              <Grid item xs={1}>
+                <MoreVert />
+              </Grid>
+            </Grid>
+            <Divider />
+            <Grid container xl={12} className="my-20">
+              <Grid item xs={4} className={classes.itemTitle}>
+                Paypal
+              </Grid>
+              <Grid item xs={4} className={classes.inforField}>
+                apurba@gmail.com
+              </Grid>
+              <Grid item xs={3} className={classes.verifiField}>
+                Verified
+              </Grid>
+              <Grid item xs={1}>
+                <MoreVert />
+              </Grid>
+            </Grid>
+            <Divider />
+          </Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper} variant="outlined"></Paper>
+          <Paper className={classes.paper} variant="outlined">
+            <Grid container xl={12} spacing={3} className="my-20">
+              <Grid item xl={6}>
+                <Typography component="p" className={classes.header}>
+                  Available Balance
+                </Typography>
+                <Typography component="p" className={classes.content}>
+                  $100.00 USD
+                </Typography>
+              </Grid>
+              <Grid item xl={6}>
+                <Typography component="p" className={classes.header}>
+                  Total Earning
+                </Typography>
+                <Typography component="p" className={classes.content}>
+                  $5000.00 USD
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid container xl={12} spacing={3} className="my-20">
+              <Grid item xl={6}>
+                <Typography component="p" className={classes.header}>
+                  Total Withdraw
+                </Typography>
+                <Typography component="p" className={classes.content}>
+                  $50000.00 USD
+                </Typography>
+              </Grid>
+              <Grid item xl={6}>
+                <Typography component="p" className={classes.header}>
+                  Up Coming
+                </Typography>
+                <Typography component="p" className={classes.content}>
+                  $300.00 USD
+                </Typography>
+              </Grid>
+            </Grid>
+          </Paper>
         </Grid>
       </Grid>
     </div>
