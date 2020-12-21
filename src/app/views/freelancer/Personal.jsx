@@ -1,9 +1,18 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { Paper, Grid, Typography, Avatar, Divider } from "@material-ui/core";
+import {
+  Paper,
+  Grid,
+  Typography,
+  Avatar,
+  Divider,
+  IconButton,
+} from "@material-ui/core";
 
-import { MoreVert, Create } from "@material-ui/icons";
+import { MoreVert, Create, Edit } from "@material-ui/icons";
+
+import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(3),
     fontSize: 14,
     fontWeight: "bold",
-  }
+  },
 }));
 
 function Personal() {
@@ -96,7 +105,7 @@ function Personal() {
               IT Professional
             </Typography>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Email
               </Grid>
@@ -107,11 +116,17 @@ function Personal() {
                 Verified
               </Grid>
               <Grid item xs={1}>
-                <MoreVert />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 KYC
               </Grid>
@@ -122,11 +137,17 @@ function Personal() {
                 Not Verified
               </Grid>
               <Grid item xs={1}>
-                <MoreVert />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Mobile
               </Grid>
@@ -137,11 +158,17 @@ function Personal() {
                 Not Verified
               </Grid>
               <Grid item xs={1}>
-                <MoreVert />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Payment
               </Grid>
@@ -152,11 +179,17 @@ function Personal() {
                 Not Verified
               </Grid>
               <Grid item xs={1}>
-                <MoreVert />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Country
               </Grid>
@@ -165,11 +198,17 @@ function Personal() {
               </Grid>
               <Grid item xs={3}></Grid>
               <Grid item xs={1}>
-                <Create />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <Edit />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Category
               </Grid>
@@ -178,7 +217,13 @@ function Personal() {
               </Grid>
               <Grid item xs={3}></Grid>
               <Grid item xs={1}>
-                <Create />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <Edit />
+                </IconButton>
               </Grid>
             </Grid>
           </Paper>
@@ -189,7 +234,7 @@ function Personal() {
               Billing
             </Typography>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Credit Card
               </Grid>
@@ -200,11 +245,17 @@ function Personal() {
                 Verified
               </Grid>
               <Grid item xs={1}>
-                <MoreVert />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Credit Card
               </Grid>
@@ -215,11 +266,17 @@ function Personal() {
                 In Active
               </Grid>
               <Grid item xs={1}>
-                <MoreVert />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-20">
               <Grid item xs={4} className={classes.itemTitle}>
                 Paypal
               </Grid>
@@ -230,7 +287,13 @@ function Personal() {
                 Verified
               </Grid>
               <Grid item xs={1}>
-                <MoreVert />
+                <IconButton
+                  aria-label="display more actions"
+                  edge="start"
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
               </Grid>
             </Grid>
             <Divider />

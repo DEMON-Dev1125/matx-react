@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -55,11 +55,17 @@ const useStyles = makeStyles((theme) => ({
 export default function Security() {
   const classes = useStyles();
 
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
+  const newPass = useRef();
+  const confirmPass = useRef();
+  const email = useRef();
+  const phonenumber = useRef();
+  const status = useRef();
+
+  const [values, setValues] = useState({
+    newPass: "",
+    confirmPass: "",
+    email: "",
+    status: "",
     showPassword: false,
   });
 
@@ -73,6 +79,25 @@ export default function Security() {
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const savePassButton = (event) => {
+    event.preventDefault();
+    const New = newPass.current.value;
+    const Confirm = confirmPass.current.value;
+    if (New == Confirm) {
+      console.log("Success");
+    } else console.log("Failed");
+  };
+
+  const saveEmailButton = () => {
+    console.log("email", email.current.value);
+  };
+
+  const saveMobileButton = () => {
+    const Phonenumber = phonenumber.current.state.formattedNumber;
+    const Status = status.current.value;
+    console.log(Phonenumber, Status);
   };
 
   return (
@@ -95,10 +120,11 @@ export default function Security() {
                 fullWidth
                 className={classes.passField}
                 placeholder="Set new password"
-                id="outlined-adornment-password"
+                id="newPass"
+                inputRef={newPass}
                 type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
+                value={values.newPass}
+                onChange={handleChange("newPass")}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -122,13 +148,16 @@ export default function Security() {
                 fullWidth
                 className={classes.passField}
                 placeholder="Confirm new password"
-                id="outlined-adornment-password"
+                id="confirmPass"
+                inputRef={confirmPass}
                 type="password"
-                value={values.password}
-                onChange={handleChange("password")}
+                value={values.confirmPass}
+                onChange={handleChange("confirmPass")}
               />
             </FormControl>
-            <button className={classes.button}>Save</button>
+            <button onClick={savePassButton} className={classes.button}>
+              Save
+            </button>
           </Paper>
         </Grid>
         <Grid item xs={4}>
@@ -147,6 +176,7 @@ export default function Security() {
               <OutlinedInput
                 fullWidth
                 className={classes.passField}
+                inputRef={email}
                 placeholder="Enter your new email"
                 id="outlined-adornment-email"
                 type="text"
@@ -154,7 +184,9 @@ export default function Security() {
                 onChange={handleChange("email")}
               />
             </FormControl>
-            <button className={classes.button}>Save</button>
+            <button onClick={saveEmailButton} className={classes.button}>
+              Save
+            </button>
           </Paper>
         </Grid>
         <Grid item xs={4}>
@@ -167,14 +199,13 @@ export default function Security() {
             </Typography>
 
             <MuiPhoneNumber
-              className={clsx(classes.margin, "pr-10")}
               fullWidth
+              className={clsx(classes.margin, "pr-10")}
               variant="outlined"
               name="phone"
               data-cy="user-phone"
               defaultCountry={"us"}
-              //   value={values.phone}
-              //   onChange={this.handlePhoneChange}
+              ref={phonenumber}
             />
             <FormControl
               fullWidth
@@ -184,19 +215,22 @@ export default function Security() {
               <Select
                 fullWidth
                 native
-                value={values.age}
-                onChange={handleChange}
+                value={values.staus}
+                onChange={handleChange("status")}
+                inputRef={status}
                 inputProps={{
-                  name: "age",
-                  id: "outlined-age-native-simple",
+                  name: "status",
+                  id: "outlined-status",
                 }}
               >
-                {/* <option aria-label="None" value="" /> */}
-                <option value={10}>Verified</option>
-                <option value={20}>Not Verified</option>
+                <option value={""} />
+                <option value={1}>Verified</option>
+                <option value={0}>Not Verified</option>
               </Select>
             </FormControl>
-            <button className={classes.button}>Save</button>
+            <button onClick={saveMobileButton} className={classes.button}>
+              Save
+            </button>
           </Paper>
         </Grid>
       </Grid>

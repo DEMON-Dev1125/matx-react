@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -9,7 +9,7 @@ import {
   FormHelperText,
   OutlinedInput,
   FormControl,
-  Divider
+  Divider,
 } from "@material-ui/core";
 
 const withStyles = makeStyles((theme) => ({
@@ -18,7 +18,7 @@ const withStyles = makeStyles((theme) => ({
     // padding: "10px 0 0 15px",
   },
   content: {
-    padding: 0
+    padding: 0,
   },
   title: {
     margin: theme.spacing(2),
@@ -69,11 +69,18 @@ const withStyles = makeStyles((theme) => ({
 function Setup() {
   const classes = withStyles();
 
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
+  const fromDate = useRef();
+  const fromTime = useRef();
+  const endDate = useRef();
+  const endTime = useRef();
+  const reason = useRef();
+
+  const [values, setValues] = useState({
+    fromDate: "",
+    fromTime: "",
+    endDate: "",
+    endTime: "",
+    reason: "",
     showPassword: false,
   });
 
@@ -81,7 +88,24 @@ function Setup() {
     setValues({ ...values, [prop]: event.target.value });
   };
 
-  const handleSave = () => {};
+  const handleClickSave = () => {
+    const FromDate = fromDate.current.value;
+    const FromTime = fromTime.current.value;
+    const EndDate = endDate.current.value;
+    const EndTime = endTime.current.value;
+    const Reason = reason.current.value;
+    if (
+      FromDate == "" &&
+      FromTime == "" &&
+      EndDate == "" &&
+      EndTime == "" &&
+      Reason == ""
+    ) {
+      console.log("====", FromDate, FromTime, EndDate, EndTime, Reason);
+    } else {
+      console.log("++++", FromDate, FromTime, EndDate, EndTime, Reason);
+    }
+  };
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -100,9 +124,10 @@ function Setup() {
             From Date
           </FormHelperText>
           <OutlinedInput
+            inputRef={fromDate}
             className={classes.textDateField}
             value={values.fromDate}
-            onChange={handleChange("fromoDate")}
+            onChange={handleChange("fromDate")}
             type="date"
             id="fromDateField"
             aria-describedby="outlined-date-helper-text"
@@ -122,7 +147,10 @@ function Setup() {
             Time
           </FormHelperText>
           <OutlinedInput
+            inputRef={fromTime}
             className={classes.textTimeField}
+            value={values.fromTime}
+            onChange={handleChange("fromTime")}
             type="time"
             id="fromTimeField"
             aria-describedby="outlined-time-helper-text"
@@ -143,7 +171,10 @@ function Setup() {
             End Date
           </FormHelperText>
           <OutlinedInput
+            inputRef={endDate}
             className={classes.textDateField}
+            value={values.endDate}
+            onChange={handleChange("endDate")}
             type="date"
             id="endDateField"
             aria-describedby="outlined-date-helper-text"
@@ -163,7 +194,10 @@ function Setup() {
             Time
           </FormHelperText>
           <OutlinedInput
+            inputRef={endTime}
             className={classes.textTimeField}
+            value={values.endTime}
+            onChange={handleChange("endTime")}
             type="time"
             id="endTimeField"
             aria-describedby="outlined-time-helper-text"
@@ -184,7 +218,10 @@ function Setup() {
             Reason
           </FormHelperText>
           <OutlinedInput
+            inputRef={reason}
             className={classes.textReasonField}
+            value={values.reason}
+            onChange={handleChange("reason")}
             multiline
             rows={4}
             id="reasonField"
@@ -194,7 +231,9 @@ function Setup() {
             }}
           />
         </FormControl>
-        <button className={classes.button}>Save</button>
+        <button onClick={handleClickSave} className={classes.button}>
+          Save
+        </button>
         <Typography
           className={clsx(classes.title, classes.currentStatus)}
           color="initial"

@@ -2,12 +2,28 @@ export const navigations = [
   {
     name: "Dashboard",
     path: "/dashboard/analytics",
-    icon: "dashboard"
+    icon: "dashboard",
   },
   {
     name: "Freelancer",
     path: "/freelancer",
     icon: "list",
+  },
+  {
+    name: "Users",
+    icon: "description",
+    children: [
+      {
+        name: "Freelancers",
+        path: "/users/freelancers",
+        iconText: "B",
+      },
+      {
+        name: "Buyers",
+        path: "/users/buyers",
+        iconText: "E",
+      },
+    ],
   },
   {
     name: "Forms",
@@ -16,19 +32,19 @@ export const navigations = [
       {
         name: "Basic",
         path: "/forms/basic",
-        iconText: "B"
+        iconText: "B",
       },
       {
         name: "Editor",
         path: "/forms/editor",
-        iconText: "E"
-      }
-    ]
+        iconText: "E",
+      },
+    ],
   },
   {
     name: "Drag and Drop",
     icon: "control_camera",
-    path: "/others/drag-and-drop"
+    path: "/others/drag-and-drop",
   },
   {
     name: "Multilevel",
@@ -41,26 +57,26 @@ export const navigations = [
           {
             name: "Item 1",
             path: "/charts/victory-charts",
-            iconText: "1"
+            iconText: "1",
           },
           {
             name: "Item 2",
             path: "/charts/react-vis",
-            iconText: "2"
+            iconText: "2",
           },
           {
             name: "Item 3",
             path: "/charts/recharts",
-            iconText: "3"
+            iconText: "3",
           },
           {
             name: "Item 4",
             path: "/charts/echarts",
-            iconText: "4"
-          }
-        ]
-      }
-    ]
+            iconText: "4",
+          },
+        ],
+      },
+    ],
   },
   {
     name: "Utilities",
@@ -69,24 +85,24 @@ export const navigations = [
       {
         name: "Color",
         path: "/utilities/color",
-        iconText: "C"
+        iconText: "C",
       },
       {
         name: "Spacing",
         path: "/utilities/spacing",
-        iconText: "S"
+        iconText: "S",
       },
       {
         name: "Typography",
         path: "/utilities/typography",
-        iconText: "T"
+        iconText: "T",
       },
       {
         name: "Display",
         path: "/utilities/display",
-        iconText: "D"
-      }
-    ]
+        iconText: "D",
+      },
+    ],
   },
   {
     name: "Sessions",
@@ -95,27 +111,25 @@ export const navigations = [
       {
         name: "Sign in",
         iconText: "SI",
-        path: "/session/signin"
+        path: "/session/signin",
       },
       {
         name: "Sign up",
         iconText: "SU",
-        path: "/session/signup"
+        path: "/session/signup",
       },
       {
         name: "Forgot password",
         iconText: "FP",
-        path: "/session/forgot-password"
+        path: "/session/forgot-password",
       },
       {
         name: "Error",
         iconText: "404",
-        path: "/session/404"
-      }
-    ]
+        path: "/session/404",
+      },
+    ],
   },
-  
-  
 
   {
     name: "UI Kits",
@@ -125,81 +139,79 @@ export const navigations = [
       {
         name: "Auto Complete",
         path: "/material/autocomplete",
-        iconText: "A"
+        iconText: "A",
       },
       {
         name: "Buttons",
         path: "/material/buttons",
-        iconText: "B"
+        iconText: "B",
       },
       {
         name: "Checkbox",
         path: "/material/checkbox",
-        iconText: "C"
+        iconText: "C",
       },
       {
         name: "Dialog",
         path: "/material/dialog",
-        iconText: "D"
+        iconText: "D",
       },
       {
         name: "Expansion Panel",
         path: "/material/expansion-panel",
-        iconText: "E"
+        iconText: "E",
       },
       {
         name: "Form",
         path: "/material/form",
-        iconText: "F"
+        iconText: "F",
       },
       {
         name: "Icons",
         path: "/material/icons",
-        iconText: "I"
+        iconText: "I",
       },
       {
         name: "Menu",
         path: "/material/menu",
-        iconText: "M"
+        iconText: "M",
       },
       {
         name: "Progress",
         path: "/material/progress",
-        iconText: "P"
+        iconText: "P",
       },
       {
         name: "Radio",
         path: "/material/radio",
-        iconText: "R"
+        iconText: "R",
       },
       {
         name: "Switch",
         path: "/material/switch",
-        iconText: "S"
+        iconText: "S",
       },
       {
         name: "Slider",
         path: "/material/slider",
-        iconText: "S"
+        iconText: "S",
       },
       {
         name: "Snackbar",
         path: "/material/snackbar",
-        iconText: "S"
+        iconText: "S",
       },
       {
         name: "Table",
         path: "/material/table",
-        iconText: "T"
-      }
-    ]
+        iconText: "T",
+      },
+    ],
   },
-  
+
   {
     name: "Map",
     icon: "add_location",
-    path: "/map"
+    path: "/map",
   },
-  
-  
 ];
