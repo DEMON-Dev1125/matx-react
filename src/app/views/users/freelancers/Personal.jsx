@@ -10,7 +10,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 
-import { MoreVert, Create, Edit } from "@material-ui/icons";
+import { Edit } from "@material-ui/icons";
 
 import MoreIcon from "@material-ui/icons/MoreVert";
 
@@ -85,7 +85,7 @@ function Personal() {
           <Paper className={classes.paper} variant="outlined">
             <Avatar
               alt="Remy Sharp"
-              src="/static/images/avatar/1.jpg"
+              src="/assets/images/faces/17.jpg"
               className={classes.large}
             />
             <Typography

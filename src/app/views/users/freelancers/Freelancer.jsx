@@ -1,5 +1,4 @@
-import React , { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
@@ -9,6 +8,7 @@ import { Typography, Tabs, Tab, Box } from "@material-ui/core";
 import Personal from "./Personal";
 import Security from "./Security";
 import Setup from "./Setup";
+import Review from "./Review";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -121,7 +121,7 @@ function Freelaner() {
           <Personal />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          asdf
+          <Review />
         </TabPanel>
         <TabPanel value={value} index={2}>
           <Security />

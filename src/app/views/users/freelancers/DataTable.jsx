@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { lighten, makeStyles, useTheme, withStyles } from "@material-ui/core/styles";
+import {
+  lighten,
+  makeStyles,
+  useTheme,
+  withStyles,
+} from "@material-ui/core/styles";
 
 import {
   Table,
@@ -491,7 +496,7 @@ export default function DataTable(props) {
                           <div className="flex flex-column flex-center">
                             <Avatar
                               className={classes.ava}
-                              src="/assets/images/face-3.jpg"
+                              src="/assets/images/faces/17.jpg"
                             />
                           </div>
                           <div className="flex flex-column">

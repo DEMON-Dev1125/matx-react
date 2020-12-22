@@ -20,7 +20,7 @@ const rows = [
   {
     name: "Apurba Das",
     username: "apurba00",
-    mail: "apurba@gmail.com",
+    mail: "apurba00@gmail.com",
     country: "United State",
     type: "Buyer",
     balance: "$100.00",
@@ -30,7 +30,7 @@ const rows = [
   {
     name: "Apurba Das1",
     username: "apurba11",
-    mail: "apurba@gmail.com",
+    mail: "apurba11@gmail.com",
     country: "United State",
     type: "Buyer",
     balance: "$100.00",
@@ -40,7 +40,7 @@ const rows = [
   {
     name: "Apurba Das2",
     username: "apurba22",
-    mail: "apurba@gmail.com",
+    mail: "apurba22@gmail.com",
     country: "United State",
     type: "Buyer",
     balance: "$100.00",
