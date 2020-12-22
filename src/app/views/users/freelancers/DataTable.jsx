@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { lighten, makeStyles, useTheme } from "@material-ui/core/styles";
+import { lighten, makeStyles, useTheme, withStyles } from "@material-ui/core/styles";
 
 import {
   Table,
@@ -19,17 +20,25 @@ import {
   IconButton,
   Tooltip,
   Avatar,
+  ListItemText,
+  ListItemIcon,
+  MenuItem,
+  Menu,
 } from "@material-ui/core";
 
 import { Edit } from "@material-ui/icons";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import DeleteIcon from "@material-ui/icons/Delete";
-import FilterListIcon from "@material-ui/icons/FilterList";
+import SearchIcon from "@material-ui/icons/Search";
+import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
+import PrintIcon from "@material-ui/icons/Print";
 
 import FirstPageIcon from "@material-ui/icons/FirstPage";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
+import CheckIcon from "@material-ui/icons/Check";
+import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -182,6 +191,7 @@ function DataTableHead(props) {
             </TableSortLabel>
           </TableCell>
         ))}
+        <TableCell></TableCell>
       </TableRow>
     </TableHead>
   );
@@ -214,6 +224,11 @@ const useToolbarStyles = makeStyles((theme) => ({
         },
   title: {
     flex: "1 1 100%",
+  },
+  icons: {
+    width: 144,
+    height: 48,
+    float: "right",
   },
 }));
 
@@ -257,11 +272,23 @@ const DataTableToolbar = (props) => {
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Filter list">
-          <IconButton aria-label="filter list">
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
+        <Typography component="div" className={classes.icons}>
+          <Tooltip title="Search">
+            <IconButton aria-label="search">
+              <SearchIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Download">
+            <IconButton aria-label="cloudDownload">
+              <CloudDownloadIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Print">
+            <IconButton aria-label="print">
+              <PrintIcon />
+            </IconButton>
+          </Tooltip>
+        </Typography>
       )}
     </Toolbar>
   );
@@ -302,6 +329,37 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px 10px 10px 0",
   },
 }));
+
+const StyledMenu = withStyles({
+  paper: {
+    border: "1px solid #d3d4d5",
+  },
+})((props) => (
+  <Menu
+    elevation={0}
+    getContentAnchorEl={null}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "right",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "right",
+    }}
+    {...props}
+  />
+));
+
+const StyledMenuItem = withStyles((theme) => ({
+  root: {
+    "&:focus": {
+      backgroundColor: theme.palette.primary.main,
+      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
+        color: theme.palette.common.white,
+      },
+    },
+  },
+}))(MenuItem);
 
 export default function DataTable(props) {
   const { headCells } = props;
@@ -359,12 +417,22 @@ export default function DataTable(props) {
     setPage(0);
   };
 
-  const handleEdit = (event, username) => {
-    console.log("===", username);
-  };
+  // const handleEdit = (event, username) => {
+  //   console.log("===", username);
+  // };
 
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleMoreClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className={classes.root}>
@@ -441,21 +509,58 @@ export default function DataTable(props) {
                       <TableCell>{row.category}</TableCell>
                       <TableCell>{row.status}</TableCell>
                       <TableCell>
+                        <Link to={`/freelacner/${row.username}`}>
+                          <IconButton
+                            // onClick={(event) => handleEdit(event, row.username)}
+                            aria-label="display more actions"
+                            edge="end"
+                            color="inherit"
+                          >
+                            <Edit />
+                          </IconButton>
+                        </Link>
+                      </TableCell>
+                      <TableCell>
                         <IconButton
-                          onClick={(event) => handleEdit(event, row.username)}
                           aria-label="display more actions"
                           edge="end"
                           color="inherit"
-                        >
-                          <Edit />
-                        </IconButton>
-                        <IconButton
-                          aria-label="display more actions"
-                          edge="end"
-                          color="inherit"
+                          onClick={handleMoreClick}
                         >
                           <MoreIcon />
                         </IconButton>
+                        <StyledMenu
+                          id="customized-menu"
+                          anchorEl={anchorEl}
+                          keepMounted
+                          open={Boolean(anchorEl)}
+                          onClose={handleClose}
+                        >
+                          <StyledMenuItem>
+                            <ListItemIcon>
+                              <CheckIcon fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText primary="Approval" />
+                          </StyledMenuItem>
+                          <StyledMenuItem>
+                            <ListItemIcon>
+                              <AttachMoneyIcon fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText primary="Add Money" />
+                          </StyledMenuItem>
+                          <StyledMenuItem>
+                            <ListItemIcon>
+                              <AttachMoneyIcon fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText primary="Membership" />
+                          </StyledMenuItem>
+                          <StyledMenuItem>
+                            <ListItemIcon>
+                              <AttachMoneyIcon fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText primary="Promotion" />
+                          </StyledMenuItem>
+                        </StyledMenu>
                       </TableCell>
                     </TableRow>
                   );

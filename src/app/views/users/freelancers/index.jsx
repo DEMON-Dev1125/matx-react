@@ -1,5 +1,5 @@
 import React from "react";
-import DataTable from "./../../freelancer/DataTable";
+import DataTable from "./DataTable";
 
 const headCells = [
   { id: "name", numeric: false, disablePadding: true, label: "Name" },
@@ -9,6 +9,7 @@ const headCells = [
   { id: "balance", numeric: false, disablePadding: false, label: "Balance" },
   { id: "category", numeric: false, disablePadding: false, label: "Category" },
   { id: "status", numeric: false, disablePadding: false, label: "Status" },
+  { id: "extra", numeric: false, disablePadding: false, label: "" },
   { id: "extra", numeric: false, disablePadding: false, label: "" },
 ];
 function createData(name, calories, fat, carbs, protein) {
