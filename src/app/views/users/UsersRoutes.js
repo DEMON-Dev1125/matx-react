@@ -8,10 +8,18 @@ const Freelancers = MatxLoadable({
   loader: () => import("./freelancers")
 });
 
+const Detail = MatxLoadable({
+  loader: () => import("./freelancers/Freelancer")
+});
+
 const usersRoutes = [
   {
+    path: "/users/freelancers/:id",
+    component: Detail
+  },
+  {
     path: "/users/freelancers",
-    component: Freelancers
+    component: Freelancers,
   },
   {
     path: "/users/buyers",

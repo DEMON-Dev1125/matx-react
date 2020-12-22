@@ -509,7 +509,7 @@ export default function DataTable(props) {
                       <TableCell>{row.category}</TableCell>
                       <TableCell>{row.status}</TableCell>
                       <TableCell>
-                        <Link to={`/freelacner/${row.username}`}>
+                        <Link to={`/users/freelancers/${row.username}`}>
                           <IconButton
                             // onClick={(event) => handleEdit(event, row.username)}
                             aria-label="display more actions"

@@ -39,7 +39,7 @@ const routes = [
   ...redirectRoute,
   ...UsersRoutes,
   // ...FreelancerRoutes,
-  ...errorRoute
+  // ...errorRoute
 ];
 
 export default routes;

@@ -10,7 +10,7 @@ const headCells = [
   { id: "category", numeric: false, disablePadding: false, label: "Category" },
   { id: "status", numeric: false, disablePadding: false, label: "Status" },
   { id: "extra", numeric: false, disablePadding: false, label: "" },
-  { id: "extra", numeric: false, disablePadding: false, label: "" },
+  { id: "", numeric: false, disablePadding: false, label: "" },
 ];
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
