@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     width: "108px",
     height: "108px",
     borderRadius: "50%",
-    backgroundColor: "red",
     margin: "0 37px 0 0",
   },
   avatar: {
@@ -66,7 +65,7 @@ const AppProgress = () => {
   }, []);
 };
 
-const StatCards = ({ theme }) => {
+const Review = ({ theme }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(3);
 
@@ -140,4 +139,4 @@ const StatCards = ({ theme }) => {
   );
 };
 
-export default StatCards;
+export default Review;
