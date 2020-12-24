@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import { isMdScreen } from "utils";
 import {
   Icon,
   IconButton,
@@ -8,21 +9,33 @@ import {
   withStyles,
   MuiThemeProvider
 } from "@material-ui/core";
+
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import MailIcon from "@material-ui/icons/Mail";
+
 import { connect } from "react-redux";
 import { setLayoutSettings } from "app/redux/actions/LayoutActions";
 import { logoutUser } from "app/redux/actions/UserActions";
 import { PropTypes } from "prop-types";
 import { MatxMenu, MatxSearchBox } from "matx";
-import { isMdScreen } from "utils";
-import NotificationBar from "../SharedCompoents/NotificationBar";
-import { Link } from "react-router-dom";
 import ShoppingCart from "../SharedCompoents/ShoppingCart";
+import NotificationBar from "../SharedCompoents/NotificationBar";
 
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.primary.main
   }
 });
+
+const notificationsProps = {
+  color: 'secondary',
+  children: <NotificationsIcon />,
+};
+
+const mailProps = {
+  color: 'primary',
+  children: <MailIcon />,
+};
 
 class Layout1Topbar extends Component {
   state = {};
@@ -67,7 +80,8 @@ class Layout1Topbar extends Component {
       <MuiThemeProvider theme={topbarTheme}>
         <div className="topbar">
           <div
-            className={`topbar-hold ${className}`}
+            // className={`topbar-hold ${className}`}
+            className="topbar-hold"
             style={Object.assign({}, { backgroundColor: topbarTheme.palette.primary.main }, style)}
           >
             <div className="flex flex-space-between flex-middle h-100">
@@ -76,26 +90,13 @@ class Layout1Topbar extends Component {
                   <Icon>menu</Icon>
                 </IconButton>
 
-                <div className="hide-on-mobile">
-                  <IconButton>
-                    <Icon>mail_outline</Icon>
-                  </IconButton>
-
-                  <IconButton>
-                    <Icon>web_asset</Icon>
-                  </IconButton>
-
-                  <IconButton>
-                    <Icon>star_outline</Icon>
-                  </IconButton>
-                </div>
               </div>
-              <div className="flex flex-middle">
-                <MatxSearchBox />
+              <div className="flex flex-middle ">
+                {/* <MatxSearchBox /> */}
 
-                <NotificationBar />
+                <Badge badgeContent={100} {...notificationsProps} />
 
-                <ShoppingCart></ShoppingCart>
+                <Badge badgeContent={100} {...mailProps} />
 
                 <MatxMenu
                   menuButton={

@@ -17,7 +17,7 @@ const SidenavTheme = ({ theme, settings }) => {
       ? `.navigation .nav-item:hover,
         .navigation .nav-item.active,
         .navigation .submenu {
-          background: rgba(0, 0, 0, .08);
+          background: rgba(0, 0, 0, 0);
         }`
       : "";
   }
@@ -53,11 +53,11 @@ const SidenavTheme = ({ theme, settings }) => {
         }
         .navigation .nav-item.active, 
         .navigation .nav-item.active:hover {
-          background: ${theme.palette.secondary.main};
+          color: #0F996D !important;
         }
 
         
-        ${darkHoverStyle()}
+        ${lightHoverStyle()}
         
       `}
       </style>

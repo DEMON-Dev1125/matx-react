@@ -512,7 +512,23 @@ export default function DataTable(props) {
                       <TableCell>{row.type}</TableCell>
                       <TableCell>{row.balance}</TableCell>
                       <TableCell>{row.category}</TableCell>
-                      <TableCell>{row.status}</TableCell>
+                      <TableCell>
+                        {row.status ? (
+                          row.status > 1 ? (
+                            <small className="bg-green text-white px-8 py-2 ">
+                               Approved
+                            </small>
+                          ) : (
+                            <small className="bg-secondary text-white px-8 py-2 ">
+                              Pending
+                            </small>
+                          )
+                        ) : (
+                          <small className="bg-error text-white px-8 py-2 ">
+                            Suspend
+                          </small>
+                        )}
+                      </TableCell>
                       <TableCell>
                         <Link to={`/users/freelancers/${row.username}`}>
                           <IconButton

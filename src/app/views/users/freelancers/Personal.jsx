@@ -16,7 +16,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrows: 1,
   },
   paper: {
     // padding: theme.spacing(1),
@@ -75,6 +75,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const rows = {
+  realname: "Apurba Das",
+  majortitle: "IT Professional",
+  email: "apruba@gmail.com",
+  country: "India",
+  category: "Website and IT",
+  emailstatus: 1,
+  kycstatus: 0,
+  mobilestatus: 0,
+  paymentstatus: 0,
+  cardstatus: 1,
+  paypalstatus: 0,
+};
+
 function Personal() {
   const classes = useStyles();
 
@@ -94,7 +108,7 @@ function Personal() {
               component="p"
               className={classes.userName}
             >
-              Apurba Das
+              {rows.realname}
             </Typography>
             <Typography
               color="textSecondary"
@@ -102,7 +116,7 @@ function Personal() {
               component="p"
               className={classes.majorName}
             >
-              IT Professional
+              {rows.majortitle}
             </Typography>
             <Divider />
             <Grid container xl={12} alignItems="center" className="my-20">
@@ -110,10 +124,18 @@ function Personal() {
                 Email
               </Grid>
               <Grid item xs={4} className={classes.inforField}>
-                apruba@gmail.com
+                {rows.email}
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
-                Verified
+                {rows.emailstatus == 1 ? (
+                  <small className="bg-green text-white px-8 py-2 ">
+                    Verified
+                  </small>
+                ) : (
+                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                    Not Verified
+                  </small>
+                )}
               </Grid>
               <Grid item xs={1}>
                 <IconButton
@@ -134,7 +156,15 @@ function Personal() {
                 Identity Verification
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
-                Not Verified
+                {rows.kycstatus == 1 ? (
+                  <small className="bg-green text-white px-8 py-2 ">
+                    Verified
+                  </small>
+                ) : (
+                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                    Not Verified
+                  </small>
+                )}
               </Grid>
               <Grid item xs={1}>
                 <IconButton
@@ -155,7 +185,15 @@ function Personal() {
                 Mobile Verification
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
-                Not Verified
+                {rows.mobilestatus == 1 ? (
+                  <small className="bg-green text-white px-8 py-2 ">
+                    Verified
+                  </small>
+                ) : (
+                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                    Not Verified
+                  </small>
+                )}
               </Grid>
               <Grid item xs={1}>
                 <IconButton
@@ -176,7 +214,15 @@ function Personal() {
                 Payment Verification
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
-                Not Verified
+                {rows.paymentstatus == 1 ? (
+                  <small className="bg-green text-white px-8 py-2 ">
+                    Verified
+                  </small>
+                ) : (
+                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                    Not Verified
+                  </small>
+                )}
               </Grid>
               <Grid item xs={1}>
                 <IconButton
@@ -194,7 +240,7 @@ function Personal() {
                 Country
               </Grid>
               <Grid item xs={4} className={classes.inforField}>
-                United State
+                {rows.country}
               </Grid>
               <Grid item xs={3}></Grid>
               <Grid item xs={1}>
@@ -213,7 +259,7 @@ function Personal() {
                 Category
               </Grid>
               <Grid item xs={4} className={classes.inforField}>
-                Website and IT
+                {rows.category}
               </Grid>
               <Grid item xs={3}></Grid>
               <Grid item xs={1}>
@@ -242,7 +288,15 @@ function Personal() {
                 VISA **** 5654
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
-                Verified
+                {rows.cardstatus == 1 ? (
+                  <small className="bg-green text-white px-8 py-2 ">
+                    Active
+                  </small>
+                ) : (
+                  <small className="bg-light-gray bg-error px-8 py-2 ">
+                    In Active
+                  </small>
+                )}
               </Grid>
               <Grid item xs={1}>
                 <IconButton
@@ -263,7 +317,15 @@ function Personal() {
                 VISA **** 5654
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
-                In Active
+                {rows.cardstatus == 1 ? (
+                  <small className="bg-green text-white px-8 py-2 ">
+                    Active
+                  </small>
+                ) : (
+                  <small className="bg-light-gray bg-error px-8 py-2 ">
+                    In Active
+                  </small>
+                )}
               </Grid>
               <Grid item xs={1}>
                 <IconButton
@@ -284,7 +346,15 @@ function Personal() {
                 apurba@gmail.com
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
-                Verified
+                {rows.paypalstatus == 1 ? (
+                  <small className="bg-green text-white px-8 py-2 ">
+                    Active
+                  </small>
+                ) : (
+                  <small className="bg-light-gray bg-error px-8 py-2 ">
+                    In Active
+                  </small>
+                )}
               </Grid>
               <Grid item xs={1}>
                 <IconButton

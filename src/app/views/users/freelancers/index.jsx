@@ -25,7 +25,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das1",
@@ -35,7 +35,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 0,
   },
   {
     name: "Apurba Das2",
@@ -45,7 +45,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 1,
   },
   {
     name: "Apurba Das3",
@@ -55,7 +55,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Da4",
@@ -65,7 +65,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das5",
@@ -75,7 +75,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das6",
@@ -85,7 +85,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das7",
@@ -95,7 +95,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das8",
@@ -105,7 +105,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das9",
@@ -115,7 +115,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das10",
@@ -125,7 +125,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das11",
@@ -135,7 +135,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
   {
     name: "Apurba Das12",
@@ -145,7 +145,7 @@ const rows = [
     type: "Buyer",
     balance: "$100.00",
     category: "Website and IT",
-    status: "Approved",
+    status: 2,
   },
 ];
 

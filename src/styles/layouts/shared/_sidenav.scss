@@ -7,7 +7,7 @@
   background-size: cover;
   overflow: hidden;
   z-index: 99;
-  box-shadow: $elevation-z8;
+  box-shadow: $elevation-z3;
   width: $sidenav-width;
   .sidenav__hold {
     display: flex;
@@ -36,7 +36,7 @@
       padding: 13px 18px 13px 24px;
       .brand {
         img {
-          height: 24px;
+          height: 45px;
           margin-right: 12px;
         }
         .brand__text {

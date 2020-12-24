@@ -5,6 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import MuiPhoneNumber from "material-ui-phone-number";
 
+// import { getTimeDifference } from "utils.js";
+
 import {
   Paper,
   Grid,
@@ -110,6 +112,7 @@ export default function Security() {
             </Typography>
             <Typography className={classes.text} color="textSecondary">
               Last updated a year ago.
+              {/* {getTimeDifference(new Date(notification.timestamp))} ago */}
             </Typography>
             <FormControl
               fullWidth
