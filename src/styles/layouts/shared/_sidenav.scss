@@ -7,7 +7,7 @@
   background-size: cover;
   overflow: hidden;
   z-index: 99;
-  box-shadow: $elevation-z3;
+  // box-shadow: $elevation-z3;
   width: $sidenav-width;
   .sidenav__hold {
     display: flex;
@@ -36,7 +36,7 @@
       padding: 13px 18px 13px 24px;
       .brand {
         img {
-          height: 45px;
+          height: 40px;
           margin-right: 12px;
         }
         .brand__text {
@@ -101,7 +101,7 @@
 
 .navigation {
   button.nav-item {
-    padding: 0 16px;
+    padding: 0 0 0 15px;
   }
   .nav-item {
     display: flex;
@@ -110,15 +110,15 @@
     margin-bottom: .5rem;
     justify-content: space-between;
     button {
-      padding: 0 16px;
+      padding: 0 25px;
     }
     &.active, &.active:hover {
       color: $white !important;
       // background: $primary;
-      box-shadow: $elevation-z3;
+      // box-shadow: $elevation-z3;
     }
     &.has-submenu.open, &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      // background-color: rgba(0, 0, 0, 0.05);
     }
     // &.active {
     //   background: $primary;
@@ -142,7 +142,7 @@
       z-index: 0;
       text-indent: -1000000px;
       &::after {
-        position: absolute;
+        // position: absolute;
         content: "";
         top: 0;
         left: 0;
@@ -155,6 +155,7 @@
     .item-arrow {
       span {
         font-size: 18px;
+        font-weight: bold;
       }
     }
   }

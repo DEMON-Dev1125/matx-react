@@ -7,7 +7,7 @@ import {
   Badge,
   MenuItem,
   withStyles,
-  MuiThemeProvider
+  MuiThemeProvider,
 } from "@material-ui/core";
 
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -21,26 +21,26 @@ import { MatxMenu, MatxSearchBox } from "matx";
 import ShoppingCart from "../SharedCompoents/ShoppingCart";
 import NotificationBar from "../SharedCompoents/NotificationBar";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    backgroundColor: theme.palette.primary.main
-  }
+    backgroundColor: theme.palette.primary.main,
+  },
 });
 
 const notificationsProps = {
-  color: 'secondary',
+  color: "secondary",
   children: <NotificationsIcon />,
 };
 
 const mailProps = {
-  color: 'primary',
+  color: "error",
   children: <MailIcon />,
 };
 
 class Layout1Topbar extends Component {
   state = {};
 
-  updateSidebarMode = sidebarSettings => {
+  updateSidebarMode = (sidebarSettings) => {
     let { settings, setLayoutSettings } = this.props;
 
     setLayoutSettings({
@@ -49,9 +49,9 @@ class Layout1Topbar extends Component {
         ...settings.layout1Settings,
         leftSidebar: {
           ...settings.layout1Settings.leftSidebar,
-          ...sidebarSettings
-        }
-      }
+          ...sidebarSettings,
+        },
+      },
     });
   };
 
@@ -82,21 +82,31 @@ class Layout1Topbar extends Component {
           <div
             // className={`topbar-hold ${className}`}
             className="topbar-hold"
-            style={Object.assign({}, { backgroundColor: topbarTheme.palette.primary.main }, style)}
+            style={Object.assign(
+              {},
+              { backgroundColor: topbarTheme.palette.primary.main },
+              style
+            )}
           >
             <div className="flex flex-space-between flex-middle h-100">
               <div className="flex">
-                <IconButton onClick={this.handleSidebarToggle} className="hide-on-lg">
+                <IconButton
+                  onClick={this.handleSidebarToggle}
+                  className="hide-on-lg"
+                >
                   <Icon>menu</Icon>
                 </IconButton>
-
               </div>
               <div className="flex flex-middle ">
-                {/* <MatxSearchBox /> */}
+                <MatxSearchBox />
 
-                <Badge badgeContent={100} {...notificationsProps} />
+                <Badge
+                  className="mr-48"
+                  badgeContent={100}
+                  {...notificationsProps}
+                />
 
-                <Badge badgeContent={100} {...mailProps} />
+                <Badge className="mr-44" badgeContent={100} {...mailProps} />
 
                 <MatxMenu
                   menuButton={
@@ -150,13 +160,13 @@ class Layout1Topbar extends Component {
 Layout1Topbar.propTypes = {
   setLayoutSettings: PropTypes.func.isRequired,
   logoutUser: PropTypes.func.isRequired,
-  settings: PropTypes.object.isRequired
+  settings: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   setLayoutSettings: PropTypes.func.isRequired,
   logoutUser: PropTypes.func.isRequired,
-  settings: state.layout.settings
+  settings: state.layout.settings,
 });
 
 export default withStyles(styles, { withTheme: true })(

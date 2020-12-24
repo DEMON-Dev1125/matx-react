@@ -8,7 +8,7 @@ const styles = theme => {
   return {
     expandIcon: {
       transition: "transform 0.3s cubic-bezier(0, 0, 0.2, 1) 0ms",
-      transform: "rotate(90deg)"
+      transform: "rotate(180deg)"
       // marginRight: "16px"
     },
     collapseIcon: {
@@ -73,7 +73,7 @@ class MatxVerticalNavExpansionPanel extends Component {
         >
           <div>
             <Icon className="text-middle item-icon">{icon}</Icon>
-            <span className="text-middle pl-20 item-text">{name}</span>
+            <span className="text-middle pl-20 item-text font-weight-bold">{name}</span>
           </div>
           {badge && (
             <div className={`badge bg-${badge.color}`}>{badge.value}</div>
@@ -85,7 +85,7 @@ class MatxVerticalNavExpansionPanel extends Component {
                 : classes.expandIcon + " item-arrow"
             }
           >
-            <Icon className="text-middle">chevron_right</Icon>
+            <Icon className="text-middle">arrow_drop_down</Icon>
           </div>
         </TouchRipple>
 

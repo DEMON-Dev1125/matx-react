@@ -8,6 +8,7 @@ import {
   Tooltip,
   IconButton,
   MuiThemeProvider,
+  Divider,
 } from "@material-ui/core";
 
 import { connect } from "react-redux";
@@ -167,6 +168,7 @@ class Layout1Sidenav extends Component {
             {
               <Fragment>
                 {this.renderLogoSwitch()}
+                <Divider />
                 <Sidenav></Sidenav>
               </Fragment>
             }

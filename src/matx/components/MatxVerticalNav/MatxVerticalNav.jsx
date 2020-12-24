@@ -5,23 +5,23 @@ import TouchRipple from "@material-ui/core/ButtonBase";
 import MatxVerticalNavExpansionPanel from "./MatxVerticalNavExpansionPanel";
 import { withStyles } from "@material-ui/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   expandIcon: {
     transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",
-    transform: "rotate(90deg)"
+    transform: "rotate(90deg)",
   },
   collapseIcon: {
     transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",
-    transform: "rotate(0deg)"
-  }
+    transform: "rotate(0deg)",
+  },
 });
 
 class MatxVerticalNav extends Component {
   state = {
-    collapsed: true
+    collapsed: true,
   };
 
-  renderLevels = data => {
+  renderLevels = (data) => {
     return data.map((item, index) => {
       if (item.children) {
         return (
@@ -36,15 +36,36 @@ class MatxVerticalNav extends Component {
               {(() => {
                 if (item.icon) {
                   return (
-                    <Icon className="item-icon text-middle">{item.icon}</Icon>
+                    <span>
+                      <Icon className="item-icon text-middle">{item.icon}</Icon>
+                      <span className="text-middle pl-20 item-text font-weight-bold">
+                        {item.name}
+                      </span>
+                    </span>
+                  );
+                } else if (item.icon == "") {
+                  return (
+                    <span>
+                      <Icon className="item-icon text-middle">{item.icon}</Icon>
+                      <span className="text-middle pl-20 item-text">
+                        {item.name}
+                      </span>
+                    </span>
                   );
                 } else {
                   return (
-                    <span className="item-icon icon-text">{item.iconText}</span>
+                    <span>
+                      <span className="item-icon icon-text">
+                        {item.iconText}
+                      </span>
+                      <span className="text-middle pl-20 item-text">
+                        {item.name}
+                      </span>
+                    </span>
                   );
                 }
               })()}
-              <span className="text-middle pl-20 item-text">{item.name}</span>
+              {/* <span className="text-middle pl-20 item-text">{item.name}</span> */}
               <div className="mx-auto"></div>
               {item.badge && (
                 <div className={`badge bg-${item.badge.color}`}>
