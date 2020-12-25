@@ -5,34 +5,26 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyle = makeStyles((theme) => ({
   menustyle: {
-    // width: 150,
     width: "auto",
     border: "1px solid #e6e6e6",
     borderRadius: 30,
-    // display: "inline-block",
-    padding: 5,
+    padding: 7,
     backgroundColor: "#E6E6E6",
     display: "flex",
     flexDirection: "row",
   },
-  // namestyle: {
-  //   position:
-  // }
+  menuarea: {
+    paddingLeft: 15,
+  },
   realname: {
-    // float: "left",
     textAlign: "left",
     fontSize: 12,
     fontWeight: "bold",
-    paddingLeft: 5,
-    // backgroundColor: "red",
     display: "block",
   },
   job: {
-    // float: "left",
     textAlign: "left",
     fontSize: 12,
-    paddingLeft: 5,
-    // backgroundColor: "white",
     display: "block",
   },
 }));
@@ -54,12 +46,11 @@ const MatxMenu = (props) => {
   return (
     <Fragment>
       <div className={classes.menustyle} onClick={handleClick}>
-        <div className={classes.namestyle}>
+        <div className={classes.menuarea}>
           <span className={classes.realname}>Hi, Apurba Das</span>
           <span className={classes.job}>Admin</span>
         </div>
         <div
-          // className={classes.avatar}
           style={{ display: "inline-block" }}
           aria-owns={anchorEl ? "simple-menu" : undefined}
           aria-haspopup="true"

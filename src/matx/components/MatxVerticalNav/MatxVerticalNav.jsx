@@ -38,21 +38,23 @@ class MatxVerticalNav extends Component {
                   return (
                     <span>
                       <Icon className="item-icon text-middle">{item.icon}</Icon>
-                      <span className="text-middle pl-20 item-text font-weight-bold">
+                      <span className="text-middle pl-20 item-text font-weight-bold" style={{marginLeft: -10 + "px"}}>
                         {item.name}
                       </span>
                     </span>
                   );
-                } else if (item.icon == "") {
-                  return (
-                    <span>
-                      <Icon className="item-icon text-middle">{item.icon}</Icon>
-                      <span className="text-middle pl-20 item-text">
-                        {item.name}
-                      </span>
-                    </span>
-                  );
-                } else {
+                } 
+                // else if (item.icon == "") {
+                //   return (
+                //     <span>
+                //       <Icon className="item-icon text-middle">{item.icon}</Icon>
+                //       <span className="text-middle pl-20 item-text font-weight-bold">
+                //         {item.name}
+                //       </span>
+                //     </span>
+                //   );
+                // } 
+                else {
                   return (
                     <span>
                       <span className="item-icon icon-text">

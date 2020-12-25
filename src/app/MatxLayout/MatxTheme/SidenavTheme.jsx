@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 const SidenavTheme = ({ theme, settings }) => {
-
   function darkHoverStyle() {
     return theme.palette.type === "dark"
       ? `.navigation .nav-item:hover,
@@ -36,9 +35,9 @@ const SidenavTheme = ({ theme, settings }) => {
         }
 
         .sidenav__hold {
-          background-image: url(${
-            settings.layout1Settings.leftSidebar.bgImgURL
-          });
+          background-image: url(
+            // ${settings.layout1Settings.leftSidebar.bgImgURL}
+          );
           opacity: 1 !important;
         }
         .sidenav__hold::after {

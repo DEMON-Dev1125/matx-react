@@ -230,10 +230,14 @@ const useToolbarStyles = makeStyles((theme) => ({
   title: {
     flex: "1 1 100%",
   },
+
+  total: {
+    width: "auto",
+    flex: "auto"
+  },
   icons: {
     width: 144,
     height: 48,
-    float: "right",
   },
 }));
 
@@ -257,7 +261,7 @@ const DataTableToolbar = (props) => {
           {numSelected} selected
         </Typography>
       ) : (
-        <div>
+        <div className={classes.total}>
           <Typography
             className={classes.title}
             variant="h6"
@@ -277,7 +281,7 @@ const DataTableToolbar = (props) => {
           </IconButton>
         </Tooltip>
       ) : (
-        <Typography component="div" className={classes.icons}>
+        <div className={classes.icons}>
           <Tooltip title="Search">
             <IconButton aria-label="search">
               <SearchIcon />
@@ -293,7 +297,7 @@ const DataTableToolbar = (props) => {
               <PrintIcon />
             </IconButton>
           </Tooltip>
-        </Typography>
+        </div>
       )}
     </Toolbar>
   );
@@ -358,9 +362,9 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles((theme) => ({
   root: {
     "&:focus": {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: "#F2F2F2",
       "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-        color: theme.palette.common.white,
+        color: "#0F996D",
       },
     },
   },
@@ -545,7 +549,7 @@ export default function DataTable(props) {
                         <IconButton
                           aria-label="display more actions"
                           edge="end"
-                          color="inherit"
+                          color="default"
                           onClick={handleMoreClick}
                         >
                           <MoreIcon />

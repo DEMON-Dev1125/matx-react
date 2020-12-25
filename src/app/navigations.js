@@ -2,7 +2,7 @@ export const navigations = [
   {
     name: "Dashboard",
     path: "/dashboard/analytics",
-    icon: "dashboard",
+    icon: "speed",
   },
   {
     name: "Users",
@@ -29,10 +29,6 @@ export const navigations = [
         path: "/forms/editor",
       },
     ],
-  },
-  {
-    name: "Drag and Drop",
-    path: "/others/drag-and-drop",
   },
   {
     name: "Multilevel",
@@ -164,10 +160,5 @@ export const navigations = [
         path: "/material/table",
       },
     ],
-  },
-
-  {
-    name: "Map",
-    path: "/map",
   },
 ];
