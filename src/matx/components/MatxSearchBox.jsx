@@ -53,16 +53,17 @@ const styles = (theme) => ({
   },
   inputRoot: {
     color: "#707070",
+    width: "100%",
   },
   inputInput: {
     padding: "13px 8px 13px 0",
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
+    // width: "100%",
+    // [theme.breakpoints.up("md")]: {
+    //   width: "20ch",
+    // },
   },
 });
 
