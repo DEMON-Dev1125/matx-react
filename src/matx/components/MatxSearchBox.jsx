@@ -10,20 +10,20 @@ const styles = (theme) => ({
     // backgroundColor: theme.palette.primary.main,
     // color: theme.palette.primary.contrastText
     // backgroundColor: "#FFFFFF",
-    color: "grey",
-    width: "100%",
+    color: "#F2F2F2",
+    width: "30rem",
   },
-  btnstyle: {
-    color: "#0F996D",
-    backgroundColor: "white",
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 0,
-    borderBottomLeftRadius: 4,
-    borderBottomRightRadius: 0,
-    paddingTop: "0.65rem",
-    paddingBottom: "0.65rem",
-    paddingLeft: "0.5rem",
-  },
+  // btnstyle: {
+  //   color: "#0F996D",
+  //   backgroundColor: "white",
+  //   borderTopLeftRadius: 4,
+  //   borderTopRightRadius: 0,
+  //   borderBottomLeftRadius: 4,
+  //   borderBottomRightRadius: 0,
+  //   paddingTop: "0.65rem",
+  //   paddingBottom: "0.65rem",
+  //   paddingLeft: "0.5rem",
+  // },
 
   search: {
     position: "relative",
@@ -33,7 +33,7 @@ const styles = (theme) => ({
     //   backgroundColor: fade("#FFFFFF", 0.25),
     // },
     backgroundColor: "#FFFFFF",
-    width: "30%",
+    width: "100%",
     marginRight: theme.spacing(2),
     marginLeft: 0,
     // [theme.breakpoints.up("sm")]: {
@@ -49,11 +49,10 @@ const styles = (theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "#0F996D"
+    color: "#0F996D",
   },
   inputRoot: {
     color: "#707070",
-    width: "100%"
   },
   inputInput: {
     padding: "13px 8px 13px 0",

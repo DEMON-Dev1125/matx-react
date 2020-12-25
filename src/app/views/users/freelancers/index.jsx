@@ -9,8 +9,8 @@ const headCells = [
   { id: "balance", numeric: false, disablePadding: false, label: "Balance" },
   { id: "category", numeric: false, disablePadding: false, label: "Category" },
   { id: "status", numeric: false, disablePadding: false, label: "Status" },
-  { id: "extra", numeric: false, disablePadding: false, label: "" },
-  { id: "", numeric: false, disablePadding: false, label: "" },
+  { id: "create", numeric: false, disablePadding: false, label: "" },
+  { id: "more", numeric: false, disablePadding: false, label: "" },
 ];
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -153,7 +153,7 @@ function Freelancers() {
   return (
     <div className="m-sm-30">
       <div className="mb-sm-30">
-        <DataTable headCells={headCells} rowsData={rows} />
+        <DataTable headCells={headCells} className="font-weight-bold" rowsData={rows} />
       </div>
     </div>
   );
