@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     width: "80%",
-    margin: "auto"
+    margin: "auto",
   },
   margscale: {
     marginBottom: "0px",
@@ -36,18 +36,57 @@ const useStyles = makeStyles((theme) => ({
   jobtitle: {
     fontSize: 14,
     fontWeight: "bold",
-    marginBottom: 10
+    marginBottom: 10,
   },
   feedback: {
     fontSize: 14,
   },
 }));
 
+const rows = [
+  {
+    jobtitle: "I need a logo Design",
+    feedback:
+      "“ In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ”",
+    rate: 5,
+  },
+  {
+    jobtitle: "Looking for full-stack developer",
+    feedback:
+      "“ In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ”",
+    rate: 4.8,
+  },
+  {
+    jobtitle: "Javascript developer",
+    feedback:
+      "“ In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ”",
+    rate: 3.3,
+  },
+  {
+    jobtitle: "PHP developer",
+    feedback:
+      "“ In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ”",
+    rate: 4.4,
+  },
+  {
+    jobtitle: "HTML / CSS developer",
+    feedback:
+      "“ In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ”",
+    rate: 3.6,
+  },
+  {
+    jobtitle: "senior react js developer",
+    feedback:
+      "“ In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. ”",
+    rate: 4.3,
+  },
+];
+
 const AppProgress = () => {
   const classes = useStyles();
   const [completed, setCompleted] = React.useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     function progress() {
       setCompleted((oldCompleted) => {
         if (oldCompleted === 100) {
@@ -65,38 +104,30 @@ const AppProgress = () => {
   }, []);
 };
 
-const Review = ({ theme }) => {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(3);
-
-  const reviews = (
-    <Grid item xs={12} md={6}>
+const Rowitems = ({ classes }) => {
+  return rows.map((rowitem, index) => (
+    <Grid item xs={12} md={6} key={index}>
       <Card className="play-card p-sm-24 bg-paper" elevation={6}>
         <div className={classes.card}>
           <div className={classes.avatar}>
-            <img className={classes.avadar} src="/assets/images/face-1.jpg" />
+            <img
+              className={classes.avadar}
+              src="/assets/images/faces/face-1.png"
+            />
           </div>
           <div className={classes.content}>
             <Typography component="p" className={classes.jobtitle}>
-              I need a logo Design
+              {rowitem.jobtitle}
             </Typography>
             <Typography component="p" className={classes.feedback}>
-              “ In publishing and graphic design, Lorem ipsum is a placeholder
-              text commonly used to demonstrate the visual form of a document or
-              a typeface without relying on meaningful content. ”
+              {rowitem.feedback}
             </Typography>
-            <Box
-              classes={{ root: classes.margscale }}
-              component="fieldset"
-              mb={3}
-              borderColor="transparent"
-            >
+            <Box component="fieldset" mb={3} borderColor="transparent">
               <Rating
-                name="simple-controlled"
-                value={value}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
-                }}
+                name="read-only"
+                value={rowitem.rate}
+                precision={0.1}
+                readOnly
               />
             </Box>
           </div>
@@ -113,28 +144,15 @@ const Review = ({ theme }) => {
         </div>
       </Card>
     </Grid>
-  );
+  ));
+};
+
+const Review = ({ theme }) => {
+  const classes = useStyles();
 
   return (
     <Grid container spacing={3} className="mb-24">
-      {reviews}
-      {reviews}
-      {reviews}
-      {reviews}
-      {/* <TablePagination
-        rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-        colSpan={3}
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        SelectProps={{
-          inputProps: { "aria-label": "rows per page" },
-          native: true,
-        }}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-        ActionsComponent={TablePaginationActions}
-      /> */}
+      <Rowitems classes={classes} />
     </Grid>
   );
 };

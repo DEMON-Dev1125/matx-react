@@ -18,8 +18,8 @@ import { setLayoutSettings } from "app/redux/actions/LayoutActions";
 import { logoutUser } from "app/redux/actions/UserActions";
 import { PropTypes } from "prop-types";
 import { MatxMenu, MatxSearchBox } from "matx";
-import ShoppingCart from "../SharedCompoents/ShoppingCart";
-import NotificationBar from "../SharedCompoents/NotificationBar";
+// import ShoppingCart from "../SharedCompoents/ShoppingCart";
+// import NotificationBar from "../SharedCompoents/NotificationBar";
 
 const styles = (theme) => ({
   root: {
@@ -112,7 +112,7 @@ class Layout1Topbar extends Component {
                   menuButton={
                     <img
                       className="mx-8 text-middle circular-image-small cursor-pointer"
-                      src="/assets/images/face-6.jpg"
+                      src="/assets/images/faces/face-3.png"
                       alt="user"
                     />
                   }

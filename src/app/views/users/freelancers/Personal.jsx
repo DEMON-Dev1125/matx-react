@@ -99,7 +99,7 @@ function Personal() {
           <Paper className={classes.paper} variant="outlined">
             <Avatar
               alt="Remy Sharp"
-              src="/assets/images/faces/17.jpg"
+              src="/assets/images/faces/face-1.png"
               className={classes.large}
             />
             <Typography
@@ -119,7 +119,7 @@ function Personal() {
               {rows.majortitle}
             </Typography>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Email
               </Grid>
@@ -128,11 +128,11 @@ function Personal() {
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
                 {rows.emailstatus == 1 ? (
-                  <small className="bg-green text-white px-8 py-2 ">
+                  <small className="bg-green text-white px-8 my-10 ">
                     Verified
                   </small>
                 ) : (
-                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                  <small className="bg-light-gray text-gray px-8 my-10 ">
                     Not Verified
                   </small>
                 )}
@@ -148,7 +148,7 @@ function Personal() {
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 KYC
               </Grid>
@@ -157,11 +157,11 @@ function Personal() {
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
                 {rows.kycstatus == 1 ? (
-                  <small className="bg-green text-white px-8 py-2 ">
+                  <small className="bg-green text-white px-8 my-10 ">
                     Verified
                   </small>
                 ) : (
-                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                  <small className="bg-light-gray text-gray px-8 my-10 ">
                     Not Verified
                   </small>
                 )}
@@ -177,7 +177,7 @@ function Personal() {
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Mobile
               </Grid>
@@ -186,11 +186,11 @@ function Personal() {
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
                 {rows.mobilestatus == 1 ? (
-                  <small className="bg-green text-white px-8 py-2 ">
+                  <small className="bg-green text-white px-8 my-10 ">
                     Verified
                   </small>
                 ) : (
-                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                  <small className="bg-light-gray text-gray px-8 my-10 ">
                     Not Verified
                   </small>
                 )}
@@ -206,7 +206,7 @@ function Personal() {
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Payment
               </Grid>
@@ -215,11 +215,11 @@ function Personal() {
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
                 {rows.paymentstatus == 1 ? (
-                  <small className="bg-green text-white px-8 py-2 ">
+                  <small className="bg-green text-white px-8 my-10 ">
                     Verified
                   </small>
                 ) : (
-                  <small className="bg-light-gray text-gray px-8 py-2 ">
+                  <small className="bg-light-gray text-gray px-8 my-10 ">
                     Not Verified
                   </small>
                 )}
@@ -235,7 +235,7 @@ function Personal() {
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Country
               </Grid>
@@ -254,7 +254,7 @@ function Personal() {
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Category
               </Grid>
@@ -280,7 +280,7 @@ function Personal() {
               Billing
             </Typography>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Credit Card
               </Grid>
@@ -289,11 +289,11 @@ function Personal() {
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
                 {rows.cardstatus == 1 ? (
-                  <small className="bg-green text-white px-8 py-2 ">
+                  <small className="bg-green text-white px-8 my-10 ">
                     Active
                   </small>
                 ) : (
-                  <small className="bg-light-gray bg-error px-8 py-2 ">
+                  <small className="bg-light-gray bg-error px-8 my-10 ">
                     In Active
                   </small>
                 )}
@@ -309,7 +309,7 @@ function Personal() {
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Credit Card
               </Grid>
@@ -318,11 +318,11 @@ function Personal() {
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
                 {rows.cardstatus == 1 ? (
-                  <small className="bg-green text-white px-8 py-2 ">
+                  <small className="bg-green text-white px-8 my-10 ">
                     Active
                   </small>
                 ) : (
-                  <small className="bg-light-gray bg-error px-8 py-2 ">
+                  <small className="bg-light-gray bg-error px-8 my-10 ">
                     In Active
                   </small>
                 )}
@@ -338,7 +338,7 @@ function Personal() {
               </Grid>
             </Grid>
             <Divider />
-            <Grid container xl={12} alignItems="center" className="my-20">
+            <Grid container xl={12} alignItems="center" className="my-10">
               <Grid item xs={4} className={classes.itemTitle}>
                 Paypal
               </Grid>
@@ -347,11 +347,11 @@ function Personal() {
               </Grid>
               <Grid item xs={3} className={classes.verifiField}>
                 {rows.paypalstatus == 1 ? (
-                  <small className="bg-green text-white px-8 py-2 ">
+                  <small className="bg-green text-white px-8 my-10 ">
                     Active
                   </small>
                 ) : (
-                  <small className="bg-light-gray bg-error px-8 py-2 ">
+                  <small className="bg-light-gray bg-error px-8 my-10 ">
                     In Active
                   </small>
                 )}
@@ -371,7 +371,7 @@ function Personal() {
         </Grid>
         <Grid item xs={4}>
           <Paper className={classes.paper} variant="outlined">
-            <Grid container xl={12} spacing={3} className="my-20">
+            <Grid container xl={12} spacing={3} className="my-10">
               <Grid item xl={6}>
                 <Typography component="p" className={classes.header}>
                   Available Balance
@@ -389,7 +389,7 @@ function Personal() {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid container xl={12} spacing={3} className="my-20">
+            <Grid container xl={12} spacing={3} className="my-10">
               <Grid item xl={6}>
                 <Typography component="p" className={classes.header}>
                   Total Withdraw

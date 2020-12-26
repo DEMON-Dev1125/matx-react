@@ -500,7 +500,7 @@ export default function DataTable(props) {
                           <div className="flex flex-column flex-center">
                             <Avatar
                               className={classes.ava}
-                              src="/assets/images/faces/17.jpg"
+                              src="/assets/images/faces/face-1.png"
                             />
                           </div>
                           <div className="flex flex-column">

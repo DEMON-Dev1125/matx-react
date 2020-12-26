@@ -49,7 +49,7 @@ const themeOptions = {
 
     MuiTableCell: {
       head: {
-        fontSize: "13px",
+        fontSize: "14px",
         padding: "12px 0px"
       },
       root: {
